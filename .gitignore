@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.venv311/
+build/
+dist/
+*.spec.bak
+vp_autoplayer.json.tmp
+vp_autoplayer.json
+instrument_profiles.json
+Sheets/
+Backups/
+*.log
+.coverage
+htmlcov/
