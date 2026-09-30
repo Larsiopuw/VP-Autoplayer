@@ -2,8 +2,16 @@ name: Windows verification
 
 on:
   push:
+    branches: [main]
+    paths-ignore:
+      - '**/*.md'
   pull_request:
+    branches: [main]
   workflow_dispatch:
+
+concurrency:
+  group: windows-verification-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: read
