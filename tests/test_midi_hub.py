@@ -41,10 +41,23 @@ def test_hub_preview_plays_original_midi_without_import(tmp_path) -> None:
     track.append(mido.Message("note_off", note=60, velocity=0, time=480))
     midi.save(source)
     player = MidiPreviewPlayer()
+    commands: list[str] = []
+
+    class RecordingWinMM:
+        def mciSendStringW(self, command, _buffer, _length, _callback) -> int:
+            commands.append(command)
+            return 0
+
+    player.winmm = RecordingWinMM()
     player.play(source)
     assert player.opened
     player.stop()
     assert not player.opened
+    assert commands == [
+        f'open "{source}" type sequencer alias {player.alias}',
+        f"play {player.alias} from 0",
+        f"close {player.alias}",
+    ]
     assert not (tmp_path / "Piano").exists()
 
 
