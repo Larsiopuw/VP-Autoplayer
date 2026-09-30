@@ -58,9 +58,9 @@ python gui.py
 ```
 
 Voraussetzung: Windows 10/11 mit Python 3.11. Für den Quellcode-Start ist
-keine EXE nötig. Eine geprüfte Windows-Binärdatei wird künftig über
-[Releases](https://github.com/Larsiopuw/VP-Autoplayer/releases) angeboten;
-ein CI-Artefakt ist lediglich ein unsignierter Test-Build.
+keine EXE nötig. Eine **unsignierte Vorschau-EXE** ist unter
+[Releases](https://github.com/Larsiopuw/VP-Autoplayer/releases/tag/v2.1.1-preview.1)
+verfügbar. Sie ist noch keine stabile Produktionsfreigabe.
 
 Die Audioanalyse läuft vollständig lokal. Es werden keine Musikdateien
 hochgeladen. Der MIDI-Hub lädt seinen Katalog und eine ausgewählte MIDI-Datei
